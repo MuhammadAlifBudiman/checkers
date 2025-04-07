@@ -20,11 +20,22 @@
         *ngFor="let cell of row; let colIndex = index"
         [ngClass]="{
           'dark-cell': (rowIndex + colIndex) % 2 === 1,
-          selected: isSelected(rowIndex, colIndex)
+          selected: isSelected(rowIndex, colIndex),
+          inactive: !cell.startsWith(gameService.currentPlayer) && cell !== null && cell !== undefined && cell !== '',
         }"
-        (click)="onCellClick(rowIndex, colIndex)"
+        (click)="handleClick(rowIndex, colIndex)"
       >
-        <div class="piece" *ngIf="cell" [ngClass]="cell">
+        <div
+          class="piece"
+          *ngIf="cell"
+          [ngClass]="{
+            red: cell === 'red' || cell === 'red-king',
+            black: cell === 'black' || cell === 'black-king',
+            'red-king': cell === 'red-king',
+            'black-king': cell === 'black-king',
+            inactive: !cell.startsWith(gameService.currentPlayer)
+          }"
+        >
           <span *ngIf="cell.includes('king')" class="king-symbol">K</span>
         </div>
       </div>

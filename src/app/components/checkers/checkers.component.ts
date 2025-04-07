@@ -30,4 +30,13 @@ export class CheckersComponent {
   resetGame(): void {
     this.gameService.initializeBoard();
   }
+
+  handleClick(row: number, col: number): void {
+    const piece = this.gameService.board[row][col];
+
+    // Prevent clicking on opponent's piece
+    if (piece && !piece.startsWith(this.gameService.currentPlayer)) return;
+
+    this.onCellClick(row, col);
+  }
 }
