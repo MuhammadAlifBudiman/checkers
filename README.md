@@ -1,6 +1,15 @@
 # Checkers
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.6.
+This project is part of the Udemy course [30 Days of Angular: Build 30 Web Projects with Angular](https://www.udemy.com/course/30-days-of-angular/). It is a web-based implementation of the classic Checkers game, built using Angular.
+
+## Project Overview
+
+The Checkers project demonstrates the use of Angular to create an interactive and dynamic web application. It includes features such as:
+
+- A responsive user interface for playing Checkers.
+- Game logic implemented in TypeScript.
+- Modular and reusable components.
+- Service-based architecture for managing game state.
 
 ## Development server
 
@@ -28,7 +37,7 @@ ng generate --help
 
 ## Building
 
-To build the project run:
+To build the project, run:
 
 ```bash
 ng build
